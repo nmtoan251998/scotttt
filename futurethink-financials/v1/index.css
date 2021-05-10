@@ -1,0 +1,218 @@
+:root {
+    --responsive-mobile: 360px;
+    --responsive-tablet: 768px;
+    --responsive-desktop: 992px;
+    --responsive-large-desktop: 1200px;
+}
+
+p {
+    margin: 0;
+}
+
+.logo {
+    width: 50px;
+}
+
+.discover {
+    height: 60vh;
+    background-image: url('./journeys-experiences-strangershores-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.discover-title {
+    margin-bottom: 30px;
+}
+
+.discover-cta {
+    padding: 10px 24px;
+    border-radius: 50px;
+    background-color: #2376D8;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.welcome {
+    width: 100%;
+    color: #fff;
+    background-color: #2376D8;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.welcome-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}   
+
+.welcome-service-icon {
+    color: white;
+}
+
+.welcome-text {
+    font-size: 34px;
+}
+
+.service-desc {
+    width: 50%;
+}
+
+.welcome-service-icon {
+    font-size: 2em;
+}
+
+.welcome-btn-learn-more {
+    border-radius: 100px;
+    color: white;
+    border: 2px solid white;
+}
+
+.services {
+    background-color: #f0f2f6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-rows: repeat(auto-fit, 100px);
+    grid-gap: 10px;
+    padding: 4em .8em;
+}
+
+.services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2376D8;
+    font-weight: 100;
+}
+
+
+
+.service-text-cta {
+    color: #204b87;
+}
+
+.services-item-1 {
+    display: none;
+}
+
+.service-desc {
+    text-align: center;
+    font-size: 1em;
+}
+
+.services-icon {
+    font-size: 2em;
+    color: #245CAA;
+}
+
+@media only screen and (min-width: 360) {
+    .service-desc {
+        width: 65%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .welcome { 
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        background-color: transparent;
+    }
+
+    .welcome-top{
+        background-color: #2376D8;
+        width: 35%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 0px 30px 0px 10px;
+        font-size: 12px;
+        align-items: flex-end;
+    }
+    
+    .welcome-middle {
+        width: 30%;
+        background-color: #fff;
+        color: #2376D8;
+        font-size: 18px;
+    }
+    
+    .welcome-bottom {
+        width: 35%;
+        background-color: #2376D8;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 12px;
+        padding: 0px 10px 0px 30px;
+        justify-content: flex-start;
+    }
+
+    .welcome-service-icon {
+        font-size: 2em;
+        color: #2376D8;
+    }
+
+    .welcome-btn-learn-more {
+        font-size: 12px;
+    }
+
+    .welcome-text {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .welcome-top {
+        font-size: 16px;
+        padding: 10px;
+        padding-right: 30px;
+    }
+
+    .welcome-bottom {
+        font-size: 16px;
+        padding: 10px;
+        padding-left: 30px;
+    }
+
+    .welcome-middle {
+        font-size: 22px;
+    }
+
+    .welcome-text {
+        font-size: 14px;        
+    }
+
+    .services-item-1 {
+        display: flex;
+    }
+}
