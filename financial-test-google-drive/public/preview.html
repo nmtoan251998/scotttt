@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript" src="https://apis.google.com/js/client.js"></script>
+    <script>
+        // Cache the api's into variables.
+        var sheets = gapi.client.sheets;
+        var drive = gapi.client.drive;
+
+        // 1. CREATE NEW SPREADSHEET
+        sheets.spreadsheets.create({
+        properties: {
+            title: 'new-sheet'
+        }
+        }).then(function(newSpreadSheet) {
+        var id = newSpreadSheet.result.spreadsheetId;
+
+        // 2. PUBLISH SPREADSHEAT VIA DRIVE API
+        drive.revisions.update({
+            fileId: id,
+            revisionId: 1
+        }, {
+            published: true, // <-- This is where the magic happens!
+            publishAuto: true
+        }).then(function() {
+
+            // 3. DISPLAY SPREADSHEET ON PAGE VIA IFRAME
+            var iframe = [
+            '<iframe ',
+            'src="https://docs.google.com/spreadsheets/d/',
+            id,
+            '/pubhtml?widget=true&headers=false&embedded=true"></iframe>'
+            ].join('');
+
+            // We're using jQuery on the page, but you get the idea.
+            $('#container').html($(iframe));
+        });
+        });
+    </script>
+</body>
+</html>
